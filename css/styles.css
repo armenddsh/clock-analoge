@@ -209,3 +209,12 @@ body {
     background-color: #FFF;
     z-index: 1;
 }
+
+#k1 {
+    width: 5px;
+    height: 1px;
+    background-color: #FFF;
+    position: absolute;
+    top: 10px;
+    left: 150px;
+}
