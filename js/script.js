@@ -1,8 +1,3 @@
-let seconds = 0;
-let hours = 0;
-let minutes = 0;
-
-const max = 360;
 
 setInterval(() => {
     const date = new Date();
