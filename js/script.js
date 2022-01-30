@@ -1,4 +1,7 @@
 
+const clockEl = document.getElementById("clock");
+let clockVisible = false;
+
 setInterval(() => {
     const date = new Date();
     let hours = date.getHours();         // Get the hour (0-23)
@@ -26,5 +29,10 @@ setInterval(() => {
     document.getElementById("seconds").style.transform = `rotate(${secondsDeg}deg)`;
     document.getElementById("minutes").style.transform = `rotate(${minutesDeg}deg)`;
     document.getElementById("hours").style.transform = `rotate(${hoursDeg}deg)`;
+
+    if (!clockVisible) {
+        clockEl.style.visibility = "visible";
+        clockVisible = true;
+    }
 
 }, 500);
