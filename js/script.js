@@ -1,32 +1,30 @@
-let seconds = 0;
-let hours = 0;
-let minutes = 0;
 
-const max = 360;
+setInterval(() => {
+    const date = new Date();
+    let hours = date.getHours();         // Get the hour (0-23)
+    let minutes = date.getMinutes();       // Get the minutes (0-59)
+    let seconds = date.getSeconds();       // Get the seconds (0-59)
 
-// setInterval(() => {
-//   document.getElementById("seconds").style.transform = `rotate(${seconds}deg)`;
-//   seconds = seconds + 1;
+    const k = 6;
+    const hour = 12;
+    const deg = 90;
 
-//   if (seconds > max) {
-//     seconds = 0;
-//   }
-// }, 100);
+    if (hours >= 12) {
+        hours = hours - hour;
+    } else {
+        hours = hours + 0;
+    }
 
-// setInterval(() => {
-//   document.getElementById("minutes").style.transform = `rotate(${minutes}deg)`;
-//   minutes = minutes + 1;
+    seconds = seconds * k;
+    minutes = minutes * k;
+    hours = hours * 5 * k;
 
-//   if (minutes > max) {
-//     minutes = 0;
-//   }
-// }, 1000);
+    const minutesDeg = minutes + deg;
+    const secondsDeg = seconds + deg;
+    const hoursDeg = ( hours + ( minutes / hour ) ) + deg;
 
-// setInterval(() => {
-//   document.getElementById("hours").style.transform = `rotate(${hours}deg)`;
-//   hours = hours + 1;
+    document.getElementById("seconds").style.transform = `rotate(${secondsDeg}deg)`;
+    document.getElementById("minutes").style.transform = `rotate(${minutesDeg}deg)`;
+    document.getElementById("hours").style.transform = `rotate(${hoursDeg}deg)`;
 
-//   if (hours > max) {
-//     hours = 0;
-//   }
-// }, 10000);
+}, 500);

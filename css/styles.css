@@ -36,6 +36,7 @@ body {
 #minutes,
 #hours {
     position: absolute;
+    color: #FFF;
 }
 
 .container {
@@ -48,13 +49,14 @@ body {
 }
 
 #clock {
-    background: #FFF;
+    background: transparent;
     width: 300px;
     height: 300px;
     color: #000;
     border-radius: 50%;
     position: relative;
     font-weight: bold;
+    border: 3px solid #FFF;
 }
 
 #n1 {
@@ -83,13 +85,13 @@ body {
 
 #n5 {
     position: absolute;
-    top: 260px;
+    top: 255px;
     left: 215px;
 }
 
 #n6 {
     position: absolute;
-    top: 280px;
+    top: 275px;
     left: 140px;
 }
 
@@ -132,78 +134,87 @@ body {
 
 #seconds {
     position: absolute;
-    display: block;
+    width: 245px;
+    height: 3px;
     top: 150px;
-    left: 23px;
-    height: 1px;
-    width: 250px;
-    background-color: #ff0000;
-    transform: rotate(151deg);
+    left: 29px;
+    transform: rotate(64deg);
 }
 
 #seconds::before {
     content: "";
     position: absolute;
-    display: block;
-    top: -1px;
-    left: 0px;
-    height: 3px;
     width: 50%;
-    background-color: #FFF;
+    height: 3px;
+    background: #FFF;
+    clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+}
+
+#seconds::after {
+    content: "";    
 }
 
 #minutes {
     position: absolute;
-    display: block;
+    width: 230px;
+    height: 5px;
     top: 150px;
-    left: 20px;
-    height: 3px;
-    width: 250px;
-    background-color: #000;
-    transform: rotate(90deg);
+    left: 37px;
+    transform: rotate(164deg);
 }
 
 #minutes::before {
     content: "";
     position: absolute;
-    display: block;
-    top: -2px;
-    left: -1px;
-    height: 7px;
     width: 50%;
-    background-color: #FFF;
+    height: 5px;
+    background: #FFF;
+    clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+}
+
+#minutes::after {
+    content: "";    
 }
 
 #hours {
     position: absolute;
-    display: block;
+    width: 220px;
+    height: 8px;
     top: 150px;
-    left: 22px;
-    height: 5px;
-    width: 250px;
-    background-color: #000;
-    transform: rotate(270deg);
+    left: 41px;
+    transform: rotate(360deg);
 }
 
 #hours::before {
     content: "";
     position: absolute;
-    display: block;
-    top: -2px;
-    left: -1px;
-    height: 8px;
     width: 50%;
-    background-color: #FFF;
+    height: 8px;
+    background: #FFF;
+    clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+
+}
+
+#hours::after {
+    content: "";    
 }
 
 #middle {
-    content: "";
     position: absolute;
+    top: 145px;
+    left: 143px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
-    width: 10px;
-    height: 10px;
-    top: 147px;
-    left: 142px;
-    background: #000;
+    background-color: #FFF;
     z-index: 1;
+}
+
+#k1 {
+    width: 5px;
+    height: 1px;
+    background-color: #FFF;
+    position: absolute;
+    top: 10px;
+    left: 150px;
 }
